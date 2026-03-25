@@ -927,8 +927,18 @@
       nav { padding: 1rem 5%; }
       .nav-links { display: none; }
       #hero { grid-template-columns: 1fr; gap: 2rem; padding: 7rem 5% 3rem; }
-      .hero-photo-col { order: -1; display: flex; justify-content: center; }
-      .hero-photo-frame { width: 220px; height: 270px; }
+      .hero-photo-col { order: -1; display: flex; flex-direction: column; align-items: center; }
+      .hero-photo-frame { width: 180px; height: 220px; position: relative; }
+      .hero-stat-stack {
+        position: static !important;
+        transform: none !important;
+        flex-direction: row !important;
+        justify-content: center;
+        margin-top: 1rem;
+      }
+      .hero-stat { min-width: 70px; padding: 0.5rem 0.8rem; }
+      .hero-stat .snum { font-size: 1.3rem; }
+      .hero-stat .slabel { font-size: 0.5rem; }
       .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
       #contact { grid-template-columns: 1fr; gap: 2.5rem; }
       section { padding: 4rem 5%; }
