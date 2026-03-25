@@ -932,6 +932,51 @@
       #contact { grid-template-columns: 1fr; gap: 2.5rem; }
       section { padding: 4rem 5%; }
       .exp-item { grid-template-columns: auto 1fr; gap: 1.2rem; }
+
+      /* About — truncate with Read More */
+      .about-text { max-height: 300px; overflow: hidden; position: relative; transition: max-height 0.5s ease; }
+      .about-text.expanded { max-height: 2000px; }
+      .about-text::after {
+        content: '';
+        position: absolute;
+        bottom: 0; left: 0; right: 0;
+        height: 80px;
+        background: linear-gradient(transparent, var(--darker));
+        pointer-events: none;
+      }
+      .about-text.expanded::after { display: none; }
+
+      /* Metrics — single column */
+      .metrics-grid { grid-template-columns: 1fr; }
+
+      /* Experience — tighter spacing */
+      .exp-desc { font-size: 0.85rem; }
+      .exp-results { flex-wrap: wrap; }
+      .result-tag { font-size: 0.7rem; }
+
+      /* Services — single column */
+      .services-grid { grid-template-columns: 1fr; }
+
+      /* Brands — smaller pills, wrap tighter */
+      .brands-grid { gap: 0.5rem; }
+      .brand-pill { font-size: 0.75rem; padding: 0.4rem 0.8rem; }
+
+      /* Testimonials — single column */
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .t-text { font-size: 0.85rem; }
+
+      /* Tools — smaller badges */
+      .tools-grid { gap: 0.5rem; }
+      .tool-badge { font-size: 0.7rem; padding: 0.4rem 0.7rem; }
+
+      /* Writing cards — single column */
+      .writing-grid { grid-template-columns: 1fr; }
+
+      /* FAQ */
+      .faq-q { font-size: 0.85rem; padding: 1rem; }
+
+      /* Section titles smaller on mobile */
+      .section-title { font-size: 2rem; }
     }
   </style>
 </head>
@@ -1061,6 +1106,9 @@
         <p>
           Same instinct, different scale. I'm still that fifteen-year-old. Finding the gap, building the thing, bringing people along.
         </p>
+      </div>
+      <div style="text-align:center; margin-top:1.5rem;">
+        <button class="view-all-btn about-read-more" id="aboutToggle" onclick="toggleAbout()" style="display:none;">Read More ↓</button>
       </div>
     </div>
   </section>
@@ -1667,6 +1715,32 @@
       btn.textContent = 'View All Numbers ↓';
     }
   }
+
+  // About toggle (mobile only)
+  function toggleAbout() {
+    var aboutText = document.querySelector('.about-text');
+    var btn = document.getElementById('aboutToggle');
+    if (aboutText.classList.contains('expanded')) {
+      aboutText.classList.remove('expanded');
+      btn.textContent = 'Read More ↓';
+    } else {
+      aboutText.classList.add('expanded');
+      btn.textContent = 'Show Less ↑';
+    }
+  }
+
+  // Show/hide about button based on screen size
+  function checkAboutBtn() {
+    var btn = document.querySelector('.about-read-more');
+    if (window.innerWidth <= 860) {
+      btn.style.display = 'inline-block';
+    } else {
+      btn.style.display = 'none';
+      document.querySelector('.about-text').classList.remove('expanded');
+    }
+  }
+  checkAboutBtn();
+  window.addEventListener('resize', checkAboutBtn);
 
   // Services toggle
   function toggleServices() {
