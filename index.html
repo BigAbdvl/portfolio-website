@@ -82,15 +82,18 @@
 
     /* ── HERO ── */
     #hero {
-      min-height: 100vh;
       background: var(--black);
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
       padding: 7rem 6% 4rem;
-      gap: 4rem;
       position: relative;
       overflow: hidden;
+    }
+    .hero-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 4rem;
+      max-width: 1100px;
+      margin: 0 auto;
     }
 
     #hero::after {
@@ -104,7 +107,7 @@
       pointer-events: none;
     }
 
-    .hero-text { position: relative; z-index: 1; }
+    .hero-text { position: relative; z-index: 1; max-width: 560px; }
 
     .hero-tag {
       display: inline-block;
@@ -670,22 +673,51 @@
     .brand-pill:hover { background: #fef3c7; border-color: var(--yellow); }
 
     /* ── TESTIMONIALS ── */
-    #testimonials { background: var(--darker); }
+    #testimonials { background: var(--darker); padding-bottom: 1rem; }
 
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
+    .testimonials-carousel {
+      position: relative;
       max-width: 1100px;
       margin: 0 auto;
     }
+    .testimonials-track-wrapper {
+      overflow: hidden;
+      width: 100%;
+    }
+    .testimonials-grid {
+      display: flex;
+      gap: 1.5rem;
+      transition: transform 0.5s ease;
+      align-items: flex-start;
+    }
+    .t-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      border: 1px solid rgba(245,196,0,0.3);
+      background: rgba(17,17,17,0.9);
+      color: var(--yellow);
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, border-color 0.2s;
+      z-index: 2;
+    }
+    .t-arrow:hover { background: var(--yellow); color: var(--black); border-color: var(--yellow); }
+    .t-arrow-left { left: -22px; }
+    .t-arrow-right { right: -22px; }
+    .t-arrow:disabled { opacity: 0.3; cursor: default; pointer-events: none; }
 
     .t-card {
       background: rgba(255,255,255,0.03);
       border: 1px solid rgba(255,255,255,0.07);
       border-radius: 3px;
       padding: 1.8rem;
-      position: relative;
+      flex: 0 0 calc((100% - 3rem) / 3);
       transition: border-color 0.2s;
     }
 
@@ -926,7 +958,8 @@
     @media (max-width: 860px) {
       nav { padding: 1rem 5%; }
       .nav-links { display: none; }
-      #hero { grid-template-columns: 1fr; gap: 2rem; padding: 7rem 5% 3rem; }
+      .hero-inner { flex-direction: column; gap: 2rem; }
+      #hero { padding: 7rem 5% 3rem; }
       .hero-photo-col { order: -1; display: flex; flex-direction: column; align-items: flex-start; }
       .hero-photo-frame { width: 180px; height: 220px; position: relative; }
       .hero-stat-stack {
@@ -972,9 +1005,12 @@
       .brands-grid { gap: 0.5rem; }
       .brand-pill { font-size: 0.75rem; padding: 0.4rem 0.8rem; }
 
-      /* Testimonials — single column */
-      .testimonials-grid { grid-template-columns: 1fr; }
+      /* Testimonials — 1 card on mobile */
       .t-text { font-size: 0.85rem; }
+      .t-card { flex: 0 0 100%; padding: 1.4rem; }
+      .t-arrow-left { left: 4px; }
+      .t-arrow-right { right: 4px; }
+      .t-arrow { width: 36px; height: 36px; font-size: 1rem; }
 
       /* Tools — smaller badges */
       .tools-grid { gap: 0.5rem; }
@@ -998,9 +1034,7 @@
     <a href="#hero" class="nav-logo">Abdul<span>.</span></a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
-      <li><a href="#metrics">Results</a></li>
       <li><a href="#experience">Experience</a></li>
-      <li><a href="#services">Services</a></li>
       <li><a href="#testimonials">Testimonials</a></li>
       <li><a href="#contact" class="nav-cta">Let's Chat</a></li>
     </ul>
@@ -1008,6 +1042,7 @@
 
   <!-- HERO -->
   <section id="hero">
+    <div class="hero-inner">
     <div class="hero-text">
       <div class="hero-tag">Marketing & Communications Strategist · Calgary, AB</div>
       <p class="hero-greeting">Hi! My name is</p>
@@ -1040,13 +1075,10 @@
             <div class="snum">1B+</div>
             <div class="slabel">Impressions</div>
           </div>
-          <div class="hero-stat">
-            <div class="snum">100+</div>
-            <div class="slabel">Brands</div>
-          </div>
         </div>
       </div>
     </div>
+    </div><!-- end hero-inner -->
   </section>
 
   <!-- ABOUT -->
@@ -1159,71 +1191,6 @@
     </div>
   </section>
 
-  <!-- METRICS -->
-  <section id="metrics">
-    <div style="max-width:1100px; margin:0 auto;">
-      <div class="section-header">
-        <div class="section-label">By the Numbers</div>
-        <h2 class="section-title">Real Results. Real Data.</h2>
-        <p class="section-subtitle">Behind every number is a decade of iteration, optimization, and the privilege of working alongside incredible individuals and teams.</p>
-      </div>
-      <div class="metrics-grid">
-        <div class="metric-card">
-          <div class="metric-num">1B+</div>
-          <div class="metric-title">Hashtag Impressions</div>
-          <div class="metric-desc">Generated through influencer-led campaigns for leading brands including Heineken Nigeria, Gossy Spring Water, GTBank, Access Bank, and others.</div>
-          <div class="metric-source">44th Avenue · Consultancy/Freelance</div>
-        </div>
-        <div class="metric-card">
-          <div class="metric-num">300%</div>
-          <div class="metric-title">Digital Engagement Growth</div>
-          <div class="metric-desc">Increase in engagement across social media (LinkedIn, FB &amp; IG) through refined content and storytelling engagement strategy.</div>
-          <div class="metric-source">University of Lethbridge</div>
-        </div>
-        <div class="metric-card">
-          <div class="metric-num">70%+</div>
-          <div class="metric-title">Audience Reach Growth</div>
-          <div class="metric-desc">Alumni audience reach growth achieved in less than a year, with newsletter engagement above industry average (32%).</div>
-          <div class="metric-source">University of Lethbridge</div>
-        </div>
-        <div class="metric-card">
-          <div class="metric-num">$52K</div>
-          <div class="metric-title">Fundraised for Canadian Cancer Society</div>
-          <div class="metric-desc">Fundraised $52,000 CAD for Canadian Cancer Society CIBC Run For The Cure.</div>
-          <div class="metric-source">Canadian Cancer Society</div>
-        </div>
-        <div class="metrics-hidden" style="display:none;">
-        <div class="metric-card">
-          <div class="metric-num">40%</div>
-          <div class="metric-title">Social Media Engagement Boost</div>
-          <div class="metric-desc">Increased social engagement through a comprehensive content marketing strategy redesign and execution.</div>
-          <div class="metric-source">R. Work Group</div>
-        </div>
-        <div class="metric-card">
-          <div class="metric-num">25%</div>
-          <div class="metric-title">Website Traffic Increase</div>
-          <div class="metric-desc">Grew website traffic through optimized messaging, digital presence improvements, and targeted outreach.</div>
-          <div class="metric-source">R. Work Group</div>
-        </div>
-        <div class="metric-card">
-          <div class="metric-num">50%+</div>
-          <div class="metric-title">Content Production Time Saved</div>
-          <div class="metric-desc">Structured content systems that reduced production time by more than half, freeing teams for higher-value work.</div>
-          <div class="metric-source">44th Avenue · Consultancy/Freelance</div>
-        </div>
-        <div class="metric-card">
-          <div class="metric-num">10+</div>
-          <div class="metric-title">Years of Experience</div>
-          <div class="metric-desc">Across finance, non-profit, education, entertainment, and tech sectors in Canada and Nigeria.</div>
-          <div class="metric-source">2015 – Present</div>
-        </div>
-        </div><!-- end metrics-hidden -->
-        <div style="text-align:center; margin-top:2rem; grid-column: 1 / -1;">
-          <button class="view-all-btn" id="metricsToggle" onclick="toggleMetrics()">View All Numbers ↓</button>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- EXPERIENCE -->
   <section id="experience">
@@ -1432,91 +1399,7 @@
     </div>
   </section>
 
-  <!-- SERVICES -->
-  <section id="services">
-    <div style="max-width:1100px; margin:0 auto;">
-      <div class="section-header">
-        <div class="section-label">What I Do</div>
-        <h2 class="section-title">Core Competencies</h2>
-        <p class="section-subtitle">The skills and services I bring to every team and project I work with.</p>
-      </div>
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon">📱</div>
-          <div class="service-name">Social Media Management</div>
-          <div class="service-desc">Experienced in managing social channels end-to-end — from content calendars and community engagement to audience growth and crisis response across multiple platforms.</div>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">🌐</div>
-          <div class="service-name">Website Management</div>
-          <div class="service-desc">Skilled in maintaining and optimizing websites — keeping content fresh, improving UX, and ensuring alignment with organizational goals through platforms like WordPress.</div>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">✍️</div>
-          <div class="service-name">Content Writing</div>
-          <div class="service-desc">Strong background in producing clear, compelling copy across formats — social posts, web content, blogs, newsletters, and internal communications.</div>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">🎨</div>
-          <div class="service-name">Design Template & Implementation</div>
-          <div class="service-desc">Experienced in creating branded, reusable templates that ensure visual consistency across platforms and make it easy for teams to produce content at scale.</div>
-        </div>
-        <div class="services-hidden" style="display:none;">
-        <div class="service-card">
-          <div class="service-icon">🎯</div>
-          <div class="service-name">Digital Strategy</div>
-          <div class="service-desc">Proven ability to build and execute digital roadmaps — aligning organizational goals with the right platforms, content, and tactics to drive measurable outcomes.</div>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">🔍</div>
-          <div class="service-name">Platform & Channel Audit</div>
-          <div class="service-desc">Adept at evaluating digital presence across channels to identify what's working, surface gaps, and recommend actionable improvements backed by data.</div>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">🎓</div>
-          <div class="service-name">Training & Workshops</div>
-          <div class="service-desc">Comfortable leading team training sessions on content creation, social strategy, and platform best practices to build internal capacity and confidence.</div>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">📊</div>
-          <div class="service-name">Analytics & Reporting</div>
-          <div class="service-desc">Skilled at turning performance data into clear reports and actionable insights — helping teams and leadership make informed decisions that improve results.</div>
-        </div>
-        </div><!-- end services-hidden -->
-        <div style="text-align:center; margin-top:2rem; grid-column: 1 / -1;">
-          <button class="view-all-btn" id="servicesToggle" onclick="toggleServices()">View All Competencies ↓</button>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- BRANDS -->
-  <section id="brands" style="background:var(--white); padding:5rem 6%;">
-    <div style="max-width:1100px; margin:0 auto;">
-      <div class="section-header">
-        <div class="section-label" style="color:var(--blue);">Trusted By</div>
-        <h2 class="section-title dark">Brands I've Worked With</h2>
-        <p class="section-subtitle dark">Clients and organizations across Nigeria and Canada, from major financial institutions to post-secondary institutions and non-profits.</p>
-      </div>
-      <div class="brands-grid">
-        <span class="brand-pill">University of Lethbridge</span>
-        <span class="brand-pill">Canadian Cancer Society</span>
-        <span class="brand-pill">R. Work Group</span>
-        <span class="brand-pill">GTBank</span>
-        <span class="brand-pill">FCMB</span>
-        <span class="brand-pill">FirstBank</span>
-        <span class="brand-pill">Access Bank</span>
-        <span class="brand-pill">Heineken Nigeria</span>
-        <span class="brand-pill">Gossy Natural Spring Water</span>
-        <span class="brand-pill">Airtel</span>
-        <span class="brand-pill">MTN</span>
-        <span class="brand-pill">TotalEnergies</span>
-        <span class="brand-pill">Wallets.africa</span>
-        <span class="brand-pill">Tecno Mobile</span>
-        <span class="brand-pill">Nigeria Football Federation</span>
-      </div>
-    </div>
-  </section>
 
   <!-- TESTIMONIALS -->
   <section id="testimonials">
@@ -1526,106 +1409,122 @@
         <h2 class="section-title">What People Say</h2>
         <p class="section-subtitle">Recommendations from colleagues, managers, and clients, from LinkedIn and beyond.</p>
       </div>
-      <div class="testimonials-grid">
+      <div class="testimonials-carousel">
+        <button class="t-arrow t-arrow-left" id="tPrev" disabled>&#8249;</button>
+        <div class="testimonials-track-wrapper">
+          <div class="testimonials-grid" id="tTrack">
 
-        <div class="t-card">
-          <div class="t-source">From <span>LinkedIn</span> · Mac Nichol</div>
-          <div class="t-quote-mark">"</div>
-          <p class="t-text">I had the pleasure of working with Abdul, and I was always impressed by his creativity and professionalism. He has a real talent for turning ideas into clear, engaging digital content that connects with people. Any team would be lucky to have his skills and positive energy.</p>
-          <div class="t-author">
-            <div class="t-avatar">MN</div>
-            <div>
-              <div class="t-name">Mac Nichol</div>
-              <div class="t-role">Property Manager · Rotary Community Service Director</div>
+            <div class="t-card">
+              <div class="t-source">From <span>LinkedIn</span> · Mac Nichol</div>
+              <div class="t-quote-mark">"</div>
+              <p class="t-text">I had the pleasure of working with Abdul, and I was always impressed by his creativity and professionalism. He has a real talent for turning ideas into clear, engaging digital content that connects with people. Any team would be lucky to have his skills and positive energy.</p>
+              <div class="t-author">
+                <div class="t-avatar">MN</div>
+                <div>
+                  <div class="t-name">Mac Nichol</div>
+                  <div class="t-role">Property Manager · Rotary Community Service Director</div>
+                </div>
+              </div>
             </div>
+
+            <div class="t-card">
+              <div class="t-source">From <span>LinkedIn</span> · Martha Mathurin-Moe</div>
+              <div class="t-quote-mark">"</div>
+              <p class="t-text">Abdul is a thoughtful and authentic writer and communicator. His ability to leverage social media platforms to tell compelling stories is exceptional. His enthusiasm and commitment to innovative digital strategy are so refreshing. He will bring fresh and diverse perspectives to any project he gets to work on.</p>
+              <div class="t-author">
+                <div class="t-avatar">MM</div>
+                <div>
+                  <div class="t-name">Martha Mathurin-Moe</div>
+                  <div class="t-role">Vice Provost, Accessibility, Belonging & Community</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="t-card">
+              <div class="t-source">From <span>Portfolio</span> · Keni Akintoye</div>
+              <div class="t-quote-mark">"</div>
+              <p class="t-text">One of Abdul's strengths, which I find quite reassuring in our digital space, is his ability to clearly and quickly understand your ideas and the brief. This is why I have worked with him on a good number of digital marketing campaigns. No issues, no errors, he gets the point, he knows what to do.</p>
+              <div class="t-author">
+                <div class="t-avatar">KA</div>
+                <div>
+                  <div class="t-name">Keni Akintoye</div>
+                  <div class="t-role">Client</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="t-card">
+              <div class="t-source">From <span>Portfolio</span> · Lola Egboh</div>
+              <div class="t-quote-mark">"</div>
+              <p class="t-text">Abdul is one of the most passionate, creative and hardworking people I have worked with. Extremely curious, he's always exploring how to make things better and ever willing to support where needed.</p>
+              <div class="t-author">
+                <div class="t-avatar">LE</div>
+                <div>
+                  <div class="t-name">Lola Egboh</div>
+                  <div class="t-role">Former Comms & Digital Marketing Manager · FCMB</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="t-card">
+              <div class="t-source">From <span>LinkedIn</span> · Chelsea Tolton Bulnes</div>
+              <div class="t-quote-mark">"</div>
+              <p class="t-text">I had the pleasure of working alongside Abdul Omope, and I can confidently say he is a standout Digital Marketing Specialist and strategic partner. Abdul is incredibly insightful and brings a big-picture mindset to every project. He's a true go-getter who consistently develops innovative social strategies that drive meaningful engagement. His ability to generate fresh ideas and translate them into effective campaigns makes him an invaluable asset to any team. Working with Abdul was both inspiring and rewarding — I highly recommend him for any role that values strategic thinking and creative execution.</p>
+              <div class="t-author">
+                <div class="t-avatar">CB</div>
+                <div>
+                  <div class="t-name">Chelsea Tolton Bulnes</div>
+                  <div class="t-role">Lead Marketing Analyst</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="t-card">
+              <div class="t-source">From <span>LinkedIn</span> · Anu Akinyemi MCIPR</div>
+              <div class="t-quote-mark">"</div>
+              <p class="t-text">Abdul is a great team player and works well with his colleagues to achieve the desired goal. He is quick to think and in turn, creates the right engagement for the brand. His reporting skills are also top-notch.</p>
+              <div class="t-author">
+                <div class="t-avatar">AA</div>
+                <div>
+                  <div class="t-name">Anu Akinyemi MCIPR</div>
+                  <div class="t-role">Marketing Communications · IoIC Member</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="t-card">
+              <div class="t-source">From <span>LinkedIn</span> · Adewale Adetona, ACIM</div>
+              <div class="t-quote-mark">"</div>
+              <p class="t-text">Abdul is a smart intelligent Marketing professional who has an eye for detail. He can be trusted to handle end-to-end marketing campaign projects and provide relevant reporting to aid the business decision-making process.</p>
+              <div class="t-author">
+                <div class="t-avatar">AA</div>
+                <div>
+                  <div class="t-name">Adewale Adetona, ACIM</div>
+                  <div class="t-role">Senior Product Marketing Manager · Arqiva</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="t-card">
+              <div class="t-source">From <span>LinkedIn</span> · Kennedy Adetayo</div>
+              <div class="t-quote-mark">"</div>
+              <p class="t-text">Assertive is the phrase that comes to mind when I think about Abdul. I've had the pleasure of knowing Abdul for 5+ years, during which we have worked on multiple digital products, social media marketing campaigns and strategy sessions. Above all, I was impressed with Abdul's ability to be confident and take charge when it is utterly needed. And, of course, his confidence radiates across the team in an infectious manner. Abdul would be a true asset for any positions requiring strategy, digital marketing, influencer marketing and management and comes with my heartfelt recommendation.</p>
+              <div class="t-author">
+                <div class="t-avatar">KA</div>
+                <div>
+                  <div class="t-name">Kennedy Adetayo</div>
+                  <div class="t-role">Full Stack Marketer · Product/Growth/B2B</div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
-
-        <div class="t-card">
-          <div class="t-source">From <span>LinkedIn</span> · Martha Mathurin-Moe</div>
-          <div class="t-quote-mark">"</div>
-          <p class="t-text">Abdul is a thoughtful and authentic writer and communicator. His ability to leverage social media platforms to tell compelling stories is exceptional. His enthusiasm and commitment to innovative digital strategy are so refreshing. He will bring fresh and diverse perspectives to any project he gets to work on.</p>
-          <div class="t-author">
-            <div class="t-avatar">MM</div>
-            <div>
-              <div class="t-name">Martha Mathurin-Moe</div>
-              <div class="t-role">Vice Provost, Accessibility, Belonging & Community</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="t-card">
-          <div class="t-source">From <span>Portfolio</span> · Keni Akintoye</div>
-          <div class="t-quote-mark">"</div>
-          <p class="t-text">One of Abdul's strengths, which I find quite reassuring in our digital space, is his ability to clearly and quickly understand your ideas and the brief. This is why I have worked with him on a good number of digital marketing campaigns. No issues, no errors, he gets the point, he knows what to do.</p>
-          <div class="t-author">
-            <div class="t-avatar">KA</div>
-            <div>
-              <div class="t-name">Keni Akintoye</div>
-              <div class="t-role">Client</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="t-card">
-          <div class="t-source">From <span>Portfolio</span> · Lola Egboh</div>
-          <div class="t-quote-mark">"</div>
-          <p class="t-text">Abdul is one of the most passionate, creative and hardworking people I have worked with. Extremely curious, he's always exploring how to make things better and ever willing to support where needed.</p>
-          <div class="t-author">
-            <div class="t-avatar">LE</div>
-            <div>
-              <div class="t-name">Lola Egboh</div>
-              <div class="t-role">Former Comms & Digital Marketing Manager · FCMB</div>
-            </div>
-          </div>
-        </div>
-
+        <button class="t-arrow t-arrow-right" id="tNext">&#8250;</button>
       </div>
     </div>
   </section>
 
-  <!-- TOOLS -->
-  <section id="tools">
-    <div style="max-width:1100px; margin:0 auto;">
-      <div class="section-header">
-        <div class="section-label">Tech Stack</div>
-        <h2 class="section-title">Systems & Tools</h2>
-        <p class="section-subtitle" style="color:rgba(255,255,255,0.55);">The platforms and tools I use to plan, create, execute, and report.</p>
-      </div>
-      <div class="tools-grid">
-        <span class="tool-badge">Google Suite</span>
-        <span class="tool-badge">Adobe Photoshop</span>
-        <span class="tool-badge">Adobe Illustrator</span>
-        <span class="tool-badge">Canva</span>
-        <span class="tool-badge">Microsoft 365</span>
-        <span class="tool-badge">Notion</span>
-        <span class="tool-badge">WordPress</span>
-        <span class="tool-badge">Google Ads</span>
-        <span class="tool-badge">Facebook</span>
-        <span class="tool-badge">X (Twitter)</span>
-        <span class="tool-badge">LinkedIn</span>
-        <span class="tool-badge">Instagram</span>
-        <span class="tool-badge">TikTok</span>
-        <span class="tool-badge">Pinterest</span>
-        <span class="tool-badge">YouTube</span>
-        <span class="tool-badge">SharePoint</span>
-        <span class="tool-badge">Microsoft Teams</span>
-        <span class="tool-badge">Outlook</span>
-        <span class="tool-badge">Drupal</span>
-        <span class="tool-badge">Mailchimp</span>
-        <span class="tool-badge">Hootsuite</span>
-        <span class="tool-badge">Buffer</span>
-        <span class="tool-badge">Meta Business Suite</span>
-        <span class="tool-badge">Google Analytics</span>
-        <span class="tool-badge">SEMrush</span>
-        <span class="tool-badge">Trello</span>
-        <span class="tool-badge">Asana</span>
-        <span class="tool-badge">Slack</span>
-        <span class="tool-badge">Zoom</span>
-        <span class="tool-badge">ChatGPT / AI Tools</span>
-      </div>
-    </div>
-  </section>
 
   <!-- FAQ -->
   <section id="faq" style="background:var(--darker);">
@@ -1753,18 +1652,55 @@
   checkAboutBtn();
   window.addEventListener('resize', checkAboutBtn);
 
-  // Services toggle
-  function toggleServices() {
-    var hidden = document.querySelector('.services-hidden');
-    var btn = document.getElementById('servicesToggle');
-    if (hidden.style.display === 'none') {
-      hidden.style.display = 'contents';
-      btn.textContent = 'Show Less ↑';
-    } else {
-      hidden.style.display = 'none';
-      btn.textContent = 'View All Competencies ↓';
+  // Testimonials carousel with arrows
+  (function() {
+    var track = document.getElementById('tTrack');
+    var prevBtn = document.getElementById('tPrev');
+    var nextBtn = document.getElementById('tNext');
+    var page = 0;
+
+    function getPerPage() {
+      return window.innerWidth <= 860 ? 1 : 3;
     }
-  }
+
+    function getTotalPages() {
+      var cards = track.querySelectorAll('.t-card').length;
+      return Math.ceil(cards / getPerPage());
+    }
+
+    function updateCarousel() {
+      var perPage = getPerPage();
+      var gap = 24; // 1.5rem
+      var card = track.querySelector('.t-card');
+      var cardWidth = card.offsetWidth + gap;
+      var offset = page * perPage * cardWidth;
+      track.style.transform = 'translateX(-' + offset + 'px)';
+      prevBtn.disabled = page === 0;
+      nextBtn.disabled = page >= getTotalPages() - 1;
+
+      // Set wrapper height to match tallest visible card
+      var cards = track.querySelectorAll('.t-card');
+      var start = page * perPage;
+      var maxH = 0;
+      for (var i = start; i < start + perPage && i < cards.length; i++) {
+        var h = cards[i].offsetHeight;
+        if (h > maxH) maxH = h;
+      }
+      track.parentElement.style.height = maxH + 'px';
+    }
+
+    nextBtn.addEventListener('click', function() {
+      if (page < getTotalPages() - 1) { page++; updateCarousel(); }
+    });
+
+    prevBtn.addEventListener('click', function() {
+      if (page > 0) { page--; updateCarousel(); }
+    });
+
+    window.addEventListener('resize', function() { page = 0; updateCarousel(); });
+    updateCarousel();
+  })();
+
 </script>
 
 </body>
