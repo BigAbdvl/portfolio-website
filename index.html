@@ -1032,6 +1032,44 @@
       border-radius: 2px;
       background: rgba(245,196,0,0.1);
       color: var(--yellow);
+    }
+
+    /* Creative Gallery */
+    .creative-gallery {
+      display: flex;
+      gap: 1.2rem;
+      overflow-x: auto;
+      padding-bottom: 1rem;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .creative-gallery::-webkit-scrollbar { display: none; }
+
+    .creative-item {
+      flex: 0 0 200px;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s;
+    }
+    .creative-item:hover { transform: translateY(-4px); }
+
+    .creative-thumb {
+      width: 200px;
+      height: 200px;
+      border-radius: 4px;
+      border: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.04);
+      margin-bottom: 0.5rem;
+      overflow: hidden;
+    }
+
+    .creative-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.6);
       border: 1px solid rgba(245,196,0,0.2);
     }
 
@@ -1353,6 +1391,52 @@
         </a>
 
       </div>
+
+      <!-- Creative Gallery -->
+      <div style="margin-top:3rem;">
+        <div class="section-label">Creative Work</div>
+        <h3 class="section-title" style="font-size:1.5rem; margin-bottom:1.5rem;">Designs, Edits & Content</h3>
+        <div class="creative-gallery">
+          <a href="https://www.instagram.com/p/DH6-cdjhhYg/?img_index=1" target="_blank" class="creative-item">
+            <div class="creative-thumb">
+              <img src="design-1.jpg" alt="Alumni Association" style="width:100%; height:100%; object-fit:cover; border-radius:4px;" />
+            </div>
+            <div class="creative-label">Design/Copy — Alumni Association</div>
+          </a>
+
+          <a href="https://www.instagram.com/reel/DUvn1wJCRV5/" target="_blank" class="creative-item">
+            <div class="creative-thumb" style="position:relative;">
+              <img src="reel-thumb-1.jpg" alt="Primary Care Paramedic Program" style="width:100%; height:100%; object-fit:cover; border-radius:4px;" />
+              <svg viewBox="0 0 24 24" style="width:36px; height:36px; fill:white; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); filter:drop-shadow(0 2px 4px rgba(0,0,0,0.5));"><polygon points="9.5,7.5 16.5,12 9.5,16.5"/></svg>
+            </div>
+            <div class="creative-label">Video — Primary Care Paramedic Program</div>
+          </a>
+
+          <div class="creative-item">
+            <div class="creative-thumb">
+              <img src="design-2.jpg" alt="Design/Copy" style="width:100%; height:100%; object-fit:cover; border-radius:4px;" />
+            </div>
+            <div class="creative-label">Design/Copy</div>
+          </div>
+
+          <a href="https://www.instagram.com/reel/DTthRUrkgUR/" target="_blank" class="creative-item">
+            <div class="creative-thumb" style="position:relative;">
+              <img src="reel-thumb-2.jpg" alt="Campus Diversity" style="width:100%; height:100%; object-fit:cover; border-radius:4px;" />
+              <svg viewBox="0 0 24 24" style="width:36px; height:36px; fill:white; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); filter:drop-shadow(0 2px 4px rgba(0,0,0,0.5));"><polygon points="9.5,7.5 16.5,12 9.5,16.5"/></svg>
+            </div>
+            <div class="creative-label">Video — Campus Diversity</div>
+          </a>
+
+          <a href="https://www.instagram.com/reel/DTRAeyLktb7/" target="_blank" class="creative-item">
+            <div class="creative-thumb" style="position:relative;">
+              <img src="reel-thumb-3.jpg" alt="Student Ambassador Program" style="width:100%; height:100%; object-fit:cover; border-radius:4px;" />
+              <svg viewBox="0 0 24 24" style="width:36px; height:36px; fill:white; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); filter:drop-shadow(0 2px 4px rgba(0,0,0,0.5));"><polygon points="9.5,7.5 16.5,12 9.5,16.5"/></svg>
+            </div>
+            <div class="creative-label">Video — Student Ambassador Program</div>
+          </a>
+        </div>
+      </div>
+
     </div>
   </section>
 
