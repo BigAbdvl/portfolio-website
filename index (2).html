@@ -1,0 +1,2007 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<!-- This site is hosted on Netlify. Anyone can build and deploy a site
+     like this one for free: https://netlify.new/?utm_campaign=loops&utm_source=ai-legible&utm_medium=owned&utm_content=comment&utm_id=c9396593-5e66-4ba7-b854-bc60625c822d
+     Netlify hosting facts for this site: static/SSR served via Netlify Edge. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Abdul Omope | Marketing & Communications | Digital Strategy | Edmonton, AB</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Barlow+Condensed:wght@700;800;900&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #111111;
+      --dark: #1a1a1a;
+      --darker: #141414;
+      --yellow: #f5c400;
+      --yellow-dark: #d4a900;
+      --blue: #1a3a8f;
+      --blue-mid: #1e4db7;
+      --white: #ffffff;
+      --gray-200: #e5e7eb;
+      --gray-400: #9ca3af;
+      --gray-600: #4b5563;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--black);
+      color: var(--white);
+      line-height: 1.6;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.1rem 6%;
+      background: rgba(17,17,17,0.97);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(245,196,0,0.15);
+    }
+
+    .nav-logo {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: var(--white);
+      text-decoration: none;
+      letter-spacing: 0.03em;
+    }
+
+    .nav-logo span { color: var(--yellow); }
+
+    .nav-links { display: flex; align-items: center; gap: 1.8rem; list-style: none; }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--yellow); }
+
+    .nav-cta {
+      background: var(--yellow) !important;
+      color: var(--black) !important;
+      padding: 0.5rem 1.3rem;
+      border-radius: 4px;
+      font-weight: 700 !important;
+      transition: background 0.2s !important;
+    }
+
+    .nav-cta:hover { background: var(--yellow-dark) !important; }
+
+    /* ── HERO ── */
+    #hero {
+      background: var(--black);
+      padding: 7rem 6% 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 4rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    #hero::after {
+      content: '';
+      position: absolute;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(245,196,0,0.06) 0%, transparent 70%);
+      top: 50%; right: 5%;
+      transform: translateY(-50%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-text { position: relative; z-index: 1; max-width: 560px; }
+
+    .hero-tag {
+      display: inline-block;
+      background: rgba(245,196,0,0.12);
+      border: 1px solid rgba(245,196,0,0.4);
+      color: var(--yellow);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 0.4rem 1rem;
+      border-radius: 2px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-greeting {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      font-weight: 700;
+      color: rgba(255,255,255,0.5);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.3rem;
+    }
+
+    .hero-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(3.5rem, 7vw, 6rem);
+      font-weight: 900;
+      color: var(--white);
+      line-height: 0.95;
+      text-transform: uppercase;
+      letter-spacing: 0.01em;
+      margin-bottom: 1rem;
+    }
+
+    .hero-name span { color: var(--yellow); }
+
+    .hero-role {
+      font-size: 1rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.04em;
+      margin-bottom: 1.2rem;
+      text-transform: uppercase;
+      font-size: 0.82rem;
+    }
+
+    .hero-desc {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.65);
+      max-width: 500px;
+      line-height: 1.75;
+      margin-bottom: 2.2rem;
+    }
+
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem; }
+
+    .btn-yellow {
+      background: var(--yellow);
+      color: var(--black);
+      padding: 0.9rem 2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 0.88rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: background 0.2s, transform 0.15s;
+      display: inline-block;
+    }
+
+    .btn-yellow:hover { background: var(--yellow-dark); transform: translateY(-2px); }
+
+    .btn-ghost {
+      border: 1.5px solid rgba(255,255,255,0.3);
+      color: var(--white);
+      padding: 0.9rem 2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.88rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: border-color 0.2s, background 0.2s;
+      display: inline-block;
+    }
+
+    .btn-ghost:hover { border-color: var(--yellow); background: rgba(245,196,0,0.08); }
+
+    .hero-badges { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+
+    .hero-micro-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.55);
+      padding: 0.35rem 0.8rem;
+      border-radius: 100px;
+      font-size: 0.72rem;
+      font-weight: 500;
+    }
+
+    .hero-photo-col {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .hero-photo-frame {
+      width: 340px;
+      height: 420px;
+      background: linear-gradient(145deg, #2a2a2a 0%, #1e1e1e 100%);
+      border: 2px solid rgba(245,196,0,0.25);
+      border-radius: 4px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 1rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-photo-placeholder { font-size: 5rem; opacity: 0.25; }
+    .hero-photo-label { font-size: 0.75rem; color: rgba(255,255,255,0.2); letter-spacing: 0.05em; }
+
+    .hero-stat-stack {
+      position: absolute;
+      right: -50px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .hero-stat {
+      background: var(--yellow);
+      color: var(--black);
+      padding: 0.7rem 1rem;
+      border-radius: 4px;
+      text-align: center;
+      min-width: 80px;
+    }
+
+    .hero-stat .snum {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .hero-stat .slabel {
+      font-size: 0.55rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      line-height: 1.3;
+    }
+
+    /* ── SECTION COMMONS ── */
+    section { padding: 6rem 6%; }
+
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--yellow);
+      margin-bottom: 0.6rem;
+    }
+
+    .section-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(2rem, 4.5vw, 3rem);
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.05;
+      text-transform: uppercase;
+      letter-spacing: 0.01em;
+      margin-bottom: 1rem;
+    }
+
+    .section-title.dark { color: var(--black); }
+    .section-subtitle { font-size: 1rem; color: rgba(255,255,255,0.55); max-width: 580px; line-height: 1.7; }
+    .section-subtitle.dark { color: var(--gray-600); }
+    .section-header { margin-bottom: 3.5rem; }
+
+    /* ── ABOUT ── */
+    #about { background: var(--darker); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 5rem;
+      align-items: start;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .about-cards { display: flex; flex-direction: column; gap: 1px; }
+
+    .about-card {
+      border: 1px solid rgba(245,196,0,0.15);
+      padding: 1.2rem 1.5rem;
+    }
+
+    .about-card-label {
+      font-size: 0.62rem;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--yellow);
+      margin-bottom: 0.4rem;
+    }
+
+    .about-card-value {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--white);
+      text-transform: uppercase;
+      line-height: 1.2;
+    }
+
+    .about-card-sub {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.4);
+      margin-top: 0.2rem;
+    }
+
+    .about-text p {
+      color: rgba(255,255,255,0.7);
+      line-height: 1.8;
+      margin-bottom: 1.2rem;
+      font-size: 0.97rem;
+    }
+
+    .about-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .chip {
+      background: rgba(245,196,0,0.08);
+      border: 1px solid rgba(245,196,0,0.2);
+      color: rgba(255,255,255,0.8);
+      padding: 0.35rem 0.85rem;
+      border-radius: 2px;
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+
+    .credential-badges { margin-top: 1.8rem; display: flex; flex-direction: column; gap: 0.7rem; }
+
+    .cred-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      background: rgba(26,58,143,0.3);
+      border: 1px solid rgba(26,58,143,0.6);
+      padding: 0.7rem 1rem;
+      border-radius: 3px;
+    }
+
+    .cred-icon { font-size: 1.1rem; }
+
+    .cred-text { font-size: 0.8rem; color: rgba(255,255,255,0.75); line-height: 1.4; }
+
+    .cred-title { font-weight: 700; color: var(--white); }
+
+    /* ── FEATURED WRITING ── */
+    #writing { background: var(--blue); }
+    #writing .section-title { color: var(--white); }
+    #writing .section-label { color: var(--yellow); }
+
+    .writing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .writing-card {
+      background: var(--black);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 4px;
+      padding: 2rem;
+      transition: border-color 0.3s, transform 0.3s;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .writing-card:hover {
+      border-color: rgba(245,196,0,0.3);
+      transform: translateY(-3px);
+    }
+
+    .writing-tag {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--yellow);
+    }
+
+    .writing-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--white);
+      line-height: 1.3;
+    }
+
+    .writing-desc {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.7;
+    }
+
+    .writing-link {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--yellow);
+      margin-top: auto;
+    }
+
+    /* ── METRICS ── */
+    #metrics { background: var(--black); }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1px;
+      border: 1px solid rgba(255,255,255,0.06);
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .metric-card {
+      background: var(--darker);
+      padding: 2rem 1.8rem;
+      border: 1px solid rgba(255,255,255,0.04);
+      transition: background 0.2s;
+    }
+
+    .metric-card:hover { background: rgba(245,196,0,0.04); }
+
+    .metric-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 3rem;
+      font-weight: 900;
+      color: var(--yellow);
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+
+    .metric-title {
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--white);
+      margin-bottom: 0.4rem;
+    }
+
+    .metric-desc {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.4);
+      line-height: 1.5;
+    }
+
+    .metric-source {
+      font-size: 0.68rem;
+      color: var(--yellow);
+      opacity: 0.6;
+      margin-top: 0.5rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    /* ── EXPERIENCE ── */
+    #experience { background: var(--darker); }
+
+    .exp-timeline { max-width: 900px; margin: 0 auto; position: relative; }
+
+    .exp-timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0; bottom: 0;
+      width: 2px;
+      background: rgba(245,196,0,0.15);
+    }
+
+    .exp-item {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 2rem;
+      margin-bottom: 3rem;
+      position: relative;
+    }
+
+    .exp-dot {
+      width: 12px; height: 12px;
+      background: var(--yellow);
+      border-radius: 50%;
+      margin-top: 0.4rem;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .exp-dot-col { display: flex; flex-direction: column; align-items: center; gap: 0; padding-left: 0; }
+
+    .exp-body { padding-bottom: 1rem; }
+
+    .exp-company {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--yellow);
+      margin-bottom: 0.25rem;
+    }
+
+    .exp-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 0.3rem;
+    }
+
+    .exp-meta {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 0.9rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .exp-desc {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.75;
+      margin-bottom: 1rem;
+    }
+
+    .exp-results { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+    .result-tag {
+      background: rgba(245,196,0,0.1);
+      border: 1px solid rgba(245,196,0,0.25);
+      color: var(--yellow);
+      padding: 0.25rem 0.7rem;
+      border-radius: 2px;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    .view-all-btn {
+      background: transparent;
+      border: 1px solid rgba(245,196,0,0.4);
+      color: var(--yellow);
+      padding: 0.7rem 2rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      cursor: pointer;
+      border-radius: 3px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .view-all-btn:hover {
+      background: var(--yellow);
+      color: var(--black);
+    }
+
+    /* ── SERVICES ── */
+    #services { background: var(--black); }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1px;
+      border: 1px solid rgba(255,255,255,0.06);
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .service-card {
+      background: var(--darker);
+      padding: 2rem 1.8rem;
+      border: 1px solid rgba(255,255,255,0.04);
+      transition: background 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 3px; height: 0;
+      background: var(--yellow);
+      transition: height 0.3s;
+    }
+
+    .service-card:hover { background: rgba(245,196,0,0.04); }
+    .service-card:hover::before { height: 100%; }
+
+    .service-icon { font-size: 1.6rem; margin-bottom: 0.9rem; }
+
+    .service-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--yellow);
+      margin-bottom: 0.5rem;
+    }
+
+    .service-desc { font-size: 0.85rem; color: rgba(255,255,255,0.5); line-height: 1.6; }
+
+    /* ── BRANDS ── */
+    #brands { background: var(--white); padding: 5rem 6%; }
+
+    .brands-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .brand-pill {
+      background: #f3f4f6;
+      border: 1.5px solid #e5e7eb;
+      color: #374151;
+      padding: 0.55rem 1.3rem;
+      border-radius: 100px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .brand-pill:hover { background: #fef3c7; border-color: var(--yellow); }
+
+    /* ── TESTIMONIALS ── */
+    #testimonials { background: var(--darker); padding-bottom: 1rem; }
+
+    .testimonials-carousel {
+      position: relative;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .testimonials-track-wrapper {
+      overflow: hidden;
+      width: 100%;
+    }
+    .testimonials-grid {
+      display: flex;
+      gap: 1.5rem;
+      transition: transform 0.5s ease;
+      align-items: flex-start;
+    }
+    .t-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      border: 1px solid rgba(245,196,0,0.3);
+      background: rgba(17,17,17,0.9);
+      color: var(--yellow);
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, border-color 0.2s;
+      z-index: 2;
+    }
+    .t-arrow:hover { background: var(--yellow); color: var(--black); border-color: var(--yellow); }
+    .t-arrow-left { left: -22px; }
+    .t-arrow-right { right: -22px; }
+    .t-arrow:disabled { opacity: 0.3; cursor: default; pointer-events: none; }
+
+    .t-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 3px;
+      padding: 1.8rem;
+      flex: 0 0 calc((100% - 3rem) / 3);
+      transition: border-color 0.2s;
+    }
+
+    .t-card:hover { border-color: rgba(245,196,0,0.3); }
+
+    .t-source {
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      margin-bottom: 1rem;
+    }
+
+    .t-source span { color: var(--yellow); }
+
+    .t-quote-mark {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 4.5rem;
+      font-weight: 900;
+      color: var(--yellow);
+      opacity: 0.15;
+      position: absolute;
+      top: 0.5rem; right: 1.2rem;
+      line-height: 1;
+    }
+
+    .t-text {
+      font-size: 0.92rem;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+
+    .t-author { display: flex; align-items: center; gap: 0.9rem; }
+
+    .t-avatar {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      font-weight: 900;
+      color: var(--black);
+      background: var(--yellow);
+      flex-shrink: 0;
+      font-family: 'Barlow Condensed', sans-serif;
+    }
+
+    .t-name { font-weight: 700; font-size: 0.9rem; color: var(--white); }
+    .t-role { font-size: 0.76rem; color: var(--gray-400); line-height: 1.3; }
+
+    /* ── TOOLS ── */
+    #tools { background: var(--blue); padding: 5rem 6%; }
+    #tools .section-title { color: var(--white); }
+    #tools .section-label { color: var(--yellow); }
+
+    .tools-grid { display: flex; flex-wrap: wrap; gap: 0.8rem; max-width: 1100px; margin: 0 auto; }
+
+    .tool-badge {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: var(--white);
+      padding: 0.55rem 1.2rem;
+      border-radius: 3px;
+      font-size: 0.83rem;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+
+    .tool-badge:hover { background: rgba(245,196,0,0.18); border-color: var(--yellow); }
+
+    /* ── FAQ ── */
+    #faq { background: var(--black); }
+
+    .faq-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .faq-card { background: var(--darker); border: 1px solid rgba(255,255,255,0.06); border-radius: 4px; overflow: hidden; }
+
+    .faq-q {
+      background: var(--darker);
+      color: var(--white);
+      padding: 1.2rem 1.5rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      line-height: 1.3;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.3s ease;
+      user-select: none;
+    }
+
+    .faq-q:hover { background: rgba(245,196,0,0.1); }
+
+    .faq-q::after {
+      content: '+';
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--yellow);
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+      margin-left: 1rem;
+    }
+
+    .faq-card.active .faq-q { background: var(--yellow); color: var(--black); }
+    .faq-card.active .faq-q::after { content: '−'; color: var(--black); }
+
+    .faq-a {
+      padding: 0 1.5rem;
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.75;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.4s ease;
+    }
+
+    .faq-card.active .faq-a {
+      padding: 1.2rem 1.5rem;
+      max-height: 300px;
+    }
+
+    /* ── CONTACT ── */
+    #contact {
+      background: var(--darker);
+      text-align: center;
+      padding: 6rem 6%;
+    }
+
+    .contact-inner {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .contact-desc {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.75;
+      margin-bottom: 2rem;
+    }
+
+    .contact-email-btn {
+      display: inline-block;
+      background: var(--yellow);
+      color: var(--black);
+      padding: 0.9rem 2.5rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      border-radius: 3px;
+      transition: background 0.2s;
+      margin-bottom: 2.5rem;
+    }
+
+    .contact-email-btn:hover { background: #d4a800; }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .social-icon-link {
+      width: 48px; height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 50%;
+      text-decoration: none;
+      font-size: 1.2rem;
+      transition: background 0.2s, border-color 0.2s, transform 0.2s;
+    }
+
+    .social-icon-link:hover {
+      background: rgba(245,196,0,0.1);
+      border-color: rgba(245,196,0,0.4);
+      transform: translateY(-2px);
+    }
+
+    .social-icon-link svg { width: 20px; height: 20px; fill: rgba(255,255,255,0.65); }
+    .social-icon-link:hover svg { fill: var(--yellow); }
+
+    .availability-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(34,197,94,0.1);
+      border: 1px solid rgba(34,197,94,0.3);
+      color: #4ade80;
+      padding: 0.45rem 1rem;
+      border-radius: 100px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+
+    .availability-dot {
+      width: 7px; height: 7px;
+      background: #4ade80;
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+    /* ── SELECTED WORK ── */
+    .sw-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .sw-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 6px;
+      overflow: hidden;
+      transition: border-color 0.3s, transform 0.2s;
+    }
+
+    .sw-card:hover {
+      border-color: rgba(245,196,0,0.3);
+      transform: translateY(-3px);
+    }
+
+    .sw-thumb {
+      width: 100%;
+      height: 180px;
+      background: rgba(255,255,255,0.05);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .sw-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .sw-thumb-placeholder {
+      color: rgba(255,255,255,0.15);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .sw-info {
+      padding: 1.2rem;
+    }
+
+    .sw-org {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--yellow);
+      margin-bottom: 0.4rem;
+    }
+
+    .sw-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
+    }
+
+    .sw-desc {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.6;
+      margin-bottom: 0.8rem;
+    }
+
+    .sw-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .sw-tag {
+      font-size: 0.65rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.25rem 0.6rem;
+      border-radius: 2px;
+      background: rgba(245,196,0,0.1);
+      color: var(--yellow);
+    }
+
+    /* Creative Gallery */
+    .creative-gallery {
+      display: flex;
+      gap: 1.2rem;
+      overflow-x: auto;
+      padding-bottom: 1rem;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .creative-gallery::-webkit-scrollbar { display: none; }
+
+    .creative-item {
+      flex: 0 0 200px;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s;
+    }
+    .creative-item:hover { transform: translateY(-4px); }
+
+    .creative-thumb {
+      width: 200px;
+      height: 200px;
+      border-radius: 4px;
+      border: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.04);
+      margin-bottom: 0.5rem;
+      overflow: hidden;
+    }
+
+    .creative-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.6);
+      border: 1px solid rgba(245,196,0,0.2);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #0a0a0a;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      text-align: center;
+      padding: 2rem 6%;
+      color: rgba(255,255,255,0.2);
+      font-size: 0.8rem;
+    }
+
+    footer a { color: var(--yellow); text-decoration: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 860px) {
+      nav { padding: 1rem 5%; }
+      .nav-links { display: none; }
+      .hero-inner { flex-direction: column; gap: 2rem; align-items: flex-start; }
+      #hero { padding: 7rem 5% 3rem; }
+      .hero-photo-col { order: -1; display: flex; flex-direction: column; align-items: flex-start; }
+      .hero-tag { text-align: left; }
+      .hero-photo-frame { width: 180px; height: 220px; position: relative; }
+      .hero-stat-stack {
+        position: static !important;
+        transform: none !important;
+        flex-direction: row !important;
+        justify-content: flex-start;
+        margin-top: 1rem;
+      }
+      .hero-stat { min-width: 70px; padding: 0.5rem 0.8rem; }
+      .hero-stat .snum { font-size: 1.3rem; }
+      .hero-stat .slabel { font-size: 0.5rem; }
+      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      #contact { grid-template-columns: 1fr; gap: 2.5rem; }
+      section { padding: 4rem 5%; }
+      .exp-item { grid-template-columns: auto 1fr; gap: 1.2rem; }
+
+      /* About — truncate with Read More */
+      .about-text { max-height: 300px; overflow: hidden; position: relative; transition: max-height 0.5s ease; }
+      .about-text.expanded { max-height: 2000px; }
+      .about-text::after {
+        content: '';
+        position: absolute;
+        bottom: 0; left: 0; right: 0;
+        height: 80px;
+        background: linear-gradient(transparent, var(--darker));
+        pointer-events: none;
+      }
+      .about-text.expanded::after { display: none; }
+
+      /* Metrics — single column */
+      .metrics-grid { grid-template-columns: 1fr; }
+
+      /* Experience — tighter spacing */
+      .exp-desc { font-size: 0.85rem; }
+
+      /* Selected Work — single column on mobile */
+      .sw-grid { grid-template-columns: 1fr; }
+      .exp-results { flex-wrap: wrap; }
+      .result-tag { font-size: 0.7rem; }
+
+      /* Services — single column */
+      .services-grid { grid-template-columns: 1fr; }
+
+      /* Brands — smaller pills, wrap tighter */
+      .brands-grid { gap: 0.5rem; }
+      .brand-pill { font-size: 0.75rem; padding: 0.4rem 0.8rem; }
+
+      /* Testimonials — 1 card on mobile */
+      .t-text { font-size: 0.85rem; }
+      .t-card { flex: 0 0 100%; padding: 1.4rem; }
+      .t-arrow-left { left: 4px; }
+      .t-arrow-right { right: 4px; }
+      .t-arrow { width: 36px; height: 36px; font-size: 1rem; }
+
+      /* Tools — smaller badges */
+      .tools-grid { gap: 0.5rem; }
+      .tool-badge { font-size: 0.7rem; padding: 0.4rem 0.7rem; }
+
+      /* Writing cards — single column */
+      .writing-grid { grid-template-columns: 1fr; }
+
+      /* FAQ */
+      .faq-q { font-size: 0.85rem; padding: 1rem; }
+
+      /* Section titles smaller on mobile */
+      .section-title { font-size: 2rem; }
+    }
+  
+    /* ===================== Layout matched to the Product & Design portfolio ===================== */
+    :root{--black:#0A0A0B;--darker:#111113;--dark:#141416;--yellow:#F7C31F;--pad:clamp(20px,4.5vw,64px);--mute:#A3A09A}
+    body{font-size:17.5px;line-height:1.62;background:#0A0A0B}
+    /* nav */
+    nav{padding:14px var(--pad)!important;background:transparent!important;border-bottom:1px solid transparent!important;backdrop-filter:none!important;transition:background .4s,border-color .4s}
+    nav.scrolled{background:rgba(10,10,11,.72)!important;backdrop-filter:blur(14px)!important;-webkit-backdrop-filter:blur(14px)!important;border-color:rgba(245,242,234,.10)!important}
+    .nav-logo{display:flex;align-items:center;line-height:0}
+    .nav-logo img{height:34px;width:auto}
+    .nav-links{flex:1;justify-content:center;gap:6px!important;position:relative}
+    .nav-links li:last-child{position:absolute;right:0}
+    .nav-links a{font-size:15px!important;padding:9px 14px;border-radius:99px;color:var(--mute)!important;transition:color .25s,background .25s}
+    .nav-links a:hover{color:#F5F2EA!important;background:rgba(245,242,234,.06)}
+    .nav-cta{background:#F5F2EA!important;color:#0A0A0B!important;border-radius:99px!important;padding:10px 16px!important;font-size:14px!important;font-weight:500!important}
+    /* page columns: full width with the same side padding as the product site */
+    #hero{padding:96px var(--pad) clamp(56px,8vh,96px)!important}
+    section{padding:clamp(56px,8vw,112px) var(--pad)!important}
+    #hero > .hero-inner,#about > .about-grid,#selected-work > div,#writing > div,#about > div,#experience > div,#testimonials > div,#faq > div,#contact > .contact-inner{max-width:calc(1600px - 2 * var(--pad))!important;margin-left:auto!important;margin-right:auto!important}
+    .writing-grid,.metrics-grid,.services-grid,.brands-grid,.testimonials-carousel,.tools-grid{max-width:none!important;margin-left:0!important;margin-right:0!important}
+    .exp-timeline,.faq-grid{margin-left:0!important;margin-right:auto!important}
+    
+    .hero-photo-col{margin-right:clamp(0px,3vw,48px)}
+    .nav-links a.nav-cta{background:#F5F2EA!important;color:#0A0A0B!important}
+    .nav-links a.nav-cta:hover{background:#fff!important}
+    /* type scale */
+    .hero-text{max-width:none!important;flex:1}
+    .hero-name{font-size:clamp(64px,13.5vw,224px)!important;line-height:.92!important;letter-spacing:.01em!important;margin:calc(clamp(4px,.8vw,12px) + 10px) 0 clamp(16px,3vw,48px)!important}
+    .hero-text{display:flex;flex-direction:column;align-items:flex-start}
+    .hero-greeting{display:none!important}
+    .hero-name{order:-2}
+    .hero-tag{order:-1;margin-bottom:1.25rem!important}
+    #hero{padding-top:96px!important}
+    .hero-inner{align-items:flex-start!important}
+    .hero-photo-col{margin-top:clamp(16px,2vw,32px)}
+    .nav-links a.nav-cta{font-size:14px!important;padding:13px 16px!important;line-height:1.2!important}
+    nav{min-height:73px}
+    .hero-name{color:#F5F2EA!important}
+    .hero-name span{color:var(--yellow)}
+    .hero-greeting{font-size:clamp(22px,2.4vw,36px)!important}
+    .section-title{font-size:clamp(44px,6.6vw,104px)!important;line-height:.95!important}
+    .section-label{display:inline-flex;align-items:center;gap:10px;font-family:'Barlow Condensed',sans-serif!important;font-weight:700!important;font-size:11px!important;letter-spacing:.1em!important;color:var(--mute)!important;margin-bottom:18px!important}
+    .section-label::before{content:"";width:22px;height:1px;background:var(--yellow)}
+    .section-subtitle,.hero-desc{color:var(--mute)!important;font-size:17.5px!important}
+    /* buttons + cards: same rounded shapes as the product site */
+    .btn-yellow,.btn-ghost,.view-all-btn,.contact-email-btn{border-radius:99px!important}
+    .hero-photo-frame,.creative-thumb{border-radius:20px!important;overflow:hidden}
+    .hero-photo-frame img{border-radius:20px!important}
+    .writing-card,.sw-card,.faq-card,.t-card{border-radius:20px!important}
+    .hero-stat{border-radius:14px!important}
+    @media (max-width:860px){
+      .nav-links{display:none!important}
+      .hero-name{font-size:20vw!important}
+      .hero-photo-col{order:1!important;margin-top:0}
+      .nav-logo img{height:30px}
+      .hero-inner{gap:2rem!important}
+    }
+</style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#hero" class="nav-logo" aria-label="Abdul Omope, home"><img src="data:image/webp;base64,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" alt="Abdul Omope" width="480" height="116"></a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#contact" class="nav-cta">Let's Chat</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-tag">Marketing & Communications Strategist · Edmonton, AB</div>
+      <p class="hero-greeting">You found me. I'm</p>
+      <h1 class="hero-name">Abdul<br/><span>Omope.</span></h1>
+      <p class="hero-desc">
+        A marketing and communications strategist with over a decade of experience leading digital strategy and community engagement. Recent work with the University of Lethbridge alumni delivered 120% social growth and lifted email engagement from 23% to 32% in six months.
+      </p>
+      <div class="hero-actions">
+        <a href="#selected-work" class="btn-yellow">View My Work</a>
+        <a href="#contact" class="btn-ghost">Let's Connect</a>
+      </div>
+      <div class="hero-badges">
+        <span class="hero-micro-badge">🏅 CMA Chartered Marketer</span>
+        <span class="hero-micro-badge">🤝 CPRS Member</span>
+        <span class="hero-micro-badge">🛡️ ICS-100 Certified</span>
+      </div>
+    </div>
+    <div class="hero-photo-col">
+      <div style="position:relative; display:inline-block;">
+        <div class="hero-photo-frame">
+          <img src="hero-photo-web.jpg" alt="Abdul Omope" style="width:100%; height:100%; object-fit:cover; object-position:center top; border-radius:4px;" />
+        </div>
+        <div class="hero-stat-stack">
+          <div class="hero-stat">
+            <div class="snum">10+</div>
+            <div class="slabel">Years Exp.</div>
+          </div>
+          <div class="hero-stat">
+            <div class="snum">1B+</div>
+            <div class="slabel">Impressions</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div><!-- end hero-inner -->
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="about-grid" style="max-width:1100px; margin:0 auto;">
+      <div>
+        <div class="section-label" style="margin-bottom:1.2rem;">Quick Background</div>
+        <div class="about-cards">
+          <div class="about-card">
+            <div class="about-card-label">Most Recent Role</div>
+            <div class="about-card-value">University of Lethbridge</div>
+            <div class="about-card-sub">Digital Engagement Specialist · Alumni &amp; External Relations</div>
+          </div>
+          <div class="about-card">
+            <div class="about-card-label">Previous</div>
+            <div class="about-card-value">Canadian Cancer Society &amp; FCMB</div>
+          </div>
+          <div class="about-card">
+            <div class="about-card-label">Open To</div>
+            <div class="about-card-value" style="font-size:0.95rem;">Communications Advisor · Marketing &amp; Communications Manager · Communications Strategist · Program &amp; Policy Advisor</div>
+          </div>
+          <div class="about-card">
+            <div class="about-card-label">Based In</div>
+            <div class="about-card-value">Edmonton, AB</div>
+          </div>
+          <div class="about-card">
+            <div class="about-card-label">Languages</div>
+            <div class="about-card-value" style="font-size:0.95rem;">English (Native) &nbsp;·&nbsp; French (Conversational)</div>
+          </div>
+        </div>
+
+        <div class="credential-badges">
+          <div class="cred-badge">
+            <div class="cred-icon">🎓</div>
+            <div class="cred-text">
+              <div class="cred-title">Northwestern Polytechnic, Grande Prairie, AB</div>
+              Diploma, Business Administration · Minor: Marketing
+            </div>
+          </div>
+          <div class="cred-badge">
+            <div class="cred-icon">🎓</div>
+            <div class="cred-text">
+              <div class="cred-title">IRGIB-Africa University, Benin Republic</div>
+              B.Sc. Industrial Engineering (WES Evaluated) · Minor: Pharmaceuticals
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-text">
+        <div class="section-label">About Me</div>
+        <h2 class="section-title" style="font-size:clamp(1.8rem,3.5vw,2.6rem); margin-bottom:1.5rem;">Finding the Gap. Building the Thing. Since '15.</h2>
+        <p>
+          I was fifteen when I built my first website on WordPress. Nobody asked me to. My community needed a place to find information and I just thought, why not me? It was rough. But people used it.
+        </p>
+        <p>
+          I didn't plan a career in marketing. I fell into it. Blogging led to Twitter, where I grew to 160k followers. That led to influencer work, then social media management, then full campaigns, then strategy. One thing kept pulling the next because I was enjoying marketing.
+        </p>
+        <p>
+          Somewhere between Nigeria and Canada, across banks, charities, a media company, a crypto startup, and a university alumni office, I figured out what I was actually good at: understanding what people need and building something they want to be part of.
+        </p>
+        <p>
+          The wins are real. A billion impressions for Heineken Nigeria ahead of the 2018 FIFA World Cup. Over 250% audience growth in two years at First City Monument Bank. A scholarship from the Government of Canada to earn my Chartered Marketer designation. And most recently, helping the University of Lethbridge grow its alumni audience by over 120% while improving event participation and fundraising.
+        </p>
+        <p>
+          But the projects I think about most are the ones nobody hired me to do. BUBO FPL, for people who live and breathe football. Drive Thru, a newsletter for immigrants figuring out life in Canada. No brief, no budget. Just a gap I couldn't walk past.
+        </p>
+        <p>
+          Same instinct, different scale. I'm still that fifteen-year-old. Finding the gap, building the thing, bringing people along.
+        </p>
+      </div>
+      <div style="text-align:center; margin-top:1.5rem;">
+        <button class="view-all-btn about-read-more" id="aboutToggle" onclick="toggleAbout()" style="display:none;">Read More ↓</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED WRITING -->
+  <section id="writing">
+    <div style="max-width:1100px; margin:0 auto;">
+      <div class="section-header">
+        <div class="section-label">Insights</div>
+        <h2 class="section-title">Featured Writing</h2>
+        <p class="section-subtitle">Stories and reflections on marketing, career, culture, place, and the immigrant experience.</p>
+      </div>
+      <div class="writing-grid">
+
+        <a href="https://www.linkedin.com/pulse/ode-university-lethbridge-leaving-coulees-winds-coming-abdul-omope--xqqle/?trackingId=wtPVamIrQGazRqUZFPDScA%3D%3D" target="_blank" class="writing-card">
+          <div class="writing-tag">Career & Reflection</div>
+          <div class="writing-title">Ode to the University of Lethbridge</div>
+          <div class="writing-desc">A farewell letter to the University of Lethbridge — on leaving the coulees, the winds, and a chapter that shaped who I'm becoming.</div>
+          <div class="writing-link">Read on LinkedIn →</div>
+        </a>
+
+        <a href="https://www.linkedin.com/pulse/wind-lethbridges-official-mayor-abdul-omope--crvme/?trackingId=CEUmwG80TY%2B2cVSgYSlNdA%3D%3D" target="_blank" class="writing-card">
+          <div class="writing-tag">Place & Culture</div>
+          <div class="writing-title">Wind: Lethbridge's Official Mayor</div>
+          <div class="writing-desc">A personal reflection on Lethbridge's most defining feature — the wind — and what it means to live in a city shaped by something you can't see but always feel.</div>
+          <div class="writing-link">Read on LinkedIn →</div>
+        </a>
+
+        <a href="https://www.linkedin.com/pulse/iniskim-stone-became-university-abdul-omope--ejahe/?trackingId=kIIYZ00zTIiZTiDUFHDW%2BQ%3D%3D" target="_blank" class="writing-card">
+          <div class="writing-tag">Storytelling</div>
+          <div class="writing-title">How Iniskim Stone Became a University</div>
+          <div class="writing-desc">The story behind the University of Lethbridge's origins — tracing the connection between the Blackfoot Iniskim stone and the institution it inspired.</div>
+          <div class="writing-link">Read on LinkedIn →</div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- SELECTED WORK -->
+  <section id="selected-work">
+    <div style="max-width:1100px; margin:0 auto;">
+      <div class="section-header">
+        <div class="section-label">Proof of Work</div>
+        <h2 class="section-title">Selected Work</h2>
+        <p class="section-subtitle">Campaigns, strategies, and outcomes from recent roles.</p>
+      </div>
+      <div class="sw-grid">
+
+        <a href="uleth-case-study.pdf" target="_blank" class="sw-card" style="text-decoration:none; color:inherit;">
+          <div class="sw-thumb" style="background:linear-gradient(135deg, #003366 0%, #005a9c 100%); flex-direction:column; gap:0.3rem;">
+            <span style="font-size:2rem;">🎓</span>
+            <span style="color:white; font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:1rem; text-transform:uppercase; letter-spacing:0.08em;">University of Lethbridge</span>
+          </div>
+          <div class="sw-info">
+            <div class="sw-org">University of Lethbridge</div>
+            <div class="sw-title">Alumni Digital Engagement & Growth</div>
+            <div class="sw-desc">Led digital strategy across social, email, and web for Alumni Relations. Grew alumni audience by over 120%, lifted newsletter engagement from 23% to 32%, and launched podcast segments and short-form video content to humanize donor impact.</div>
+            <div class="sw-tags">
+              <span class="sw-tag">Social Media</span>
+              <span class="sw-tag">Email Marketing</span>
+              <span class="sw-tag">Content Strategy</span>
+              <span class="sw-tag">120% Growth</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="ccs-case-study.pdf" target="_blank" class="sw-card" style="text-decoration:none; color:inherit;">
+          <div class="sw-thumb" style="background:linear-gradient(135deg, #c41e3a 0%, #e63950 100%); flex-direction:column; gap:0.3rem;">
+            <span style="font-size:2rem;">🎗️</span>
+            <span style="color:white; font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:1rem; text-transform:uppercase; letter-spacing:0.08em;">Canadian Cancer Society</span>
+          </div>
+          <div class="sw-info">
+            <div class="sw-org">Canadian Cancer Society</div>
+            <div class="sw-title">CIBC Run for the Cure & Community Campaigns</div>
+            <div class="sw-desc">Increased volunteer participation by 2.1x and digital engagement by 60%. Developed bilingual content campaigns that raised over $50,000 and led internal communications for the annual CIBC Run for the Cure, ensuring inclusive language and equitable representation.</div>
+            <div class="sw-tags">
+              <span class="sw-tag">Fundraising</span>
+              <span class="sw-tag">Bilingual Content</span>
+              <span class="sw-tag">DEI Communications</span>
+              <span class="sw-tag">$50K+ Raised</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="rwork-case-study.pdf" target="_blank" class="sw-card" style="text-decoration:none; color:inherit;">
+          <div class="sw-thumb" style="background:linear-gradient(135deg, #1a5632 0%, #2d8a4e 100%); flex-direction:column; gap:0.3rem;">
+            <span style="font-size:2rem;">💼</span>
+            <span style="color:white; font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:1rem; text-transform:uppercase; letter-spacing:0.08em;">R. Work Group</span>
+          </div>
+          <div class="sw-info">
+            <div class="sw-org">R. Work Group</div>
+            <div class="sw-title">Brand Repositioning & Digital Growth</div>
+            <div class="sw-desc">Directed multi-channel communications for employment programs, increasing job seeker sign-ups by 40%. Advised leadership on strategic brand repositioning and reworked website architecture, resulting in a 25% boost in session time.</div>
+            <div class="sw-tags">
+              <span class="sw-tag">Brand Strategy</span>
+              <span class="sw-tag">Web Optimization</span>
+              <span class="sw-tag">Community Outreach</span>
+              <span class="sw-tag">40% Sign-up Increase</span>
+            </div>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- Creative Gallery -->
+      <div style="margin-top:3rem;">
+        <div class="section-label">Creative Work</div>
+        <h3 class="section-title" style="font-size:1.5rem; margin-bottom:1.5rem;">Designs, Edits & Content</h3>
+        <div class="creative-gallery">
+          <a href="https://www.instagram.com/p/DH6-cdjhhYg/?img_index=1" target="_blank" class="creative-item">
+            <div class="creative-thumb">
+              <img src="design-1.jpg" alt="Alumni Association" style="width:100%; height:100%; object-fit:cover; border-radius:4px;" />
+            </div>
+            <div class="creative-label">Design/Copy — Alumni Association</div>
+          </a>
+
+          <a href="https://www.instagram.com/reel/DUvn1wJCRV5/" target="_blank" class="creative-item">
+            <div class="creative-thumb" style="position:relative;">
+              <img src="reel-thumb-1.jpg" alt="Primary Care Paramedic Program" style="width:100%; height:100%; object-fit:cover; border-radius:4px;" />
+              <svg viewBox="0 0 24 24" style="width:36px; height:36px; fill:white; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); filter:drop-shadow(0 2px 4px rgba(0,0,0,0.5));"><polygon points="9.5,7.5 16.5,12 9.5,16.5"/></svg>
+            </div>
+            <div class="creative-label">Video — Primary Care Paramedic Program</div>
+          </a>
+
+          <div class="creative-item">
+            <div class="creative-thumb">
+              <img src="design-2.jpg" alt="Design/Copy" style="width:100%; height:100%; object-fit:cover; border-radius:4px;" />
+            </div>
+            <div class="creative-label">Design/Copy</div>
+          </div>
+
+          <a href="https://www.instagram.com/reel/DTthRUrkgUR/" target="_blank" class="creative-item">
+            <div class="creative-thumb" style="position:relative;">
+              <img src="reel-thumb-2.jpg" alt="Campus Diversity" style="width:100%; height:100%; object-fit:cover; border-radius:4px;" />
+              <svg viewBox="0 0 24 24" style="width:36px; height:36px; fill:white; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); filter:drop-shadow(0 2px 4px rgba(0,0,0,0.5));"><polygon points="9.5,7.5 16.5,12 9.5,16.5"/></svg>
+            </div>
+            <div class="creative-label">Video — Campus Diversity</div>
+          </a>
+
+          <a href="https://www.instagram.com/reel/DTRAeyLktb7/" target="_blank" class="creative-item">
+            <div class="creative-thumb" style="position:relative;">
+              <img src="reel-thumb-3.jpg" alt="Student Ambassador Program" style="width:100%; height:100%; object-fit:cover; border-radius:4px;" />
+              <svg viewBox="0 0 24 24" style="width:36px; height:36px; fill:white; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); filter:drop-shadow(0 2px 4px rgba(0,0,0,0.5));"><polygon points="9.5,7.5 16.5,12 9.5,16.5"/></svg>
+            </div>
+            <div class="creative-label">Video — Student Ambassador Program</div>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div style="max-width:1100px; margin:0 auto;">
+      <div class="section-header">
+        <div class="section-label">Work History</div>
+        <h2 class="section-title">Experience</h2>
+        <p class="section-subtitle">A track record built across two continents, multiple sectors, and real measurable outcomes.</p>
+      </div>
+      <div class="exp-timeline">
+
+        <div class="exp-item">
+          <div style="display:flex;flex-direction:column;align-items:center;padding-top:5px;">
+            <div class="exp-dot"></div>
+            <div style="width:2px;flex:1;background:rgba(245,196,0,0.15);margin-top:6px;"></div>
+          </div>
+          <div class="exp-body">
+            <div class="exp-company">44th Avenue · Consultancy/Freelance (Remote)</div>
+            <div class="exp-title">Co-Founder | Campaign Director, Influencer & Brand Strategy</div>
+            <div class="exp-meta">
+              <span>📍 Remote</span>
+              <span>⏱ Feb 2018 – Nov 2025 · 7 yrs 10 mos</span>
+            </div>
+            <div class="exp-results">
+              <span class="result-tag">💥 1B+ campaign impressions</span>
+              <span class="result-tag">🤝 Access Bank rebrand comms</span>
+              <span class="result-tag">📲 Influencer campaign direction</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div style="display:flex;flex-direction:column;align-items:center;padding-top:5px;">
+            <div class="exp-dot"></div>
+            <div style="width:2px;flex:1;background:rgba(245,196,0,0.15);margin-top:6px;"></div>
+          </div>
+          <div class="exp-body">
+            <div class="exp-company">Canadian Cancer Society · Volunteer Part-time</div>
+            <div class="exp-title">Community Engagement Director</div>
+            <div class="exp-meta">
+              <span>📍 Lethbridge, Alberta</span>
+              <span>⏱ May 2025 – Oct 2025 · 6 mos</span>
+            </div>
+            <div class="exp-results">
+              <span class="result-tag">📈 2.1x volunteer participation</span>
+              <span class="result-tag">🤝 60% digital engagement growth</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div style="display:flex;flex-direction:column;align-items:center;padding-top:5px;">
+            <div class="exp-dot"></div>
+            <div style="width:2px;flex:1;background:rgba(245,196,0,0.15);margin-top:6px;"></div>
+          </div>
+          <div class="exp-body">
+            <div class="exp-company">The University of Lethbridge · Full-time</div>
+            <div class="exp-title">Digital Engagement Specialist | Alumni & External Relations</div>
+            <div class="exp-meta">
+              <span>📍 Lethbridge, Alberta</span>
+              <span>⏱ Dec 2024 – Oct 2025 · 11 mos</span>
+            </div>
+            <div class="exp-results">
+              <span class="result-tag">📈 300% engagement growth</span>
+              <span class="result-tag">👥 70%+ audience reach in 1 year</span>
+              <span class="result-tag">✉️ Newsletter above industry avg.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div style="display:flex;flex-direction:column;align-items:center;padding-top:5px;">
+            <div class="exp-dot"></div>
+            <div style="width:2px;flex:1;background:rgba(245,196,0,0.15);margin-top:6px;"></div>
+          </div>
+          <div class="exp-body">
+            <div class="exp-company">R. Work Group · Part-time</div>
+            <div class="exp-title">Marketing & Community Specialist | Career & Disability Services</div>
+            <div class="exp-meta">
+              <span>📍 Grande Prairie, Alberta</span>
+              <span>⏱ Aug 2023 – Mar 2024 · 8 mos</span>
+            </div>
+            <div class="exp-results">
+              <span class="result-tag">📊 40% social engagement boost</span>
+              <span class="result-tag">🌐 25% website traffic increase</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-hidden" style="display:none;">
+
+        <div class="exp-item">
+          <div style="display:flex;flex-direction:column;align-items:center;padding-top:5px;">
+            <div class="exp-dot"></div>
+            <div style="width:2px;flex:1;background:rgba(245,196,0,0.15);margin-top:6px;"></div>
+          </div>
+          <div class="exp-body">
+            <div class="exp-company">The MPmania Media · Full-time (Remote)</div>
+            <div class="exp-title">Web Content Manager</div>
+            <div class="exp-meta">
+              <span>📍 Remote</span>
+              <span>⏱ May 2021 – Jun 2023 · 2 yrs 2 mos</span>
+            </div>
+            <div class="exp-results">
+              <span class="result-tag">🔍 SEO optimization</span>
+              <span class="result-tag">📝 Content team management</span>
+              <span class="result-tag">⚙️ WordPress</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div style="display:flex;flex-direction:column;align-items:center;padding-top:5px;">
+            <div class="exp-dot"></div>
+            <div style="width:2px;flex:1;background:rgba(245,196,0,0.15);margin-top:6px;"></div>
+          </div>
+          <div class="exp-body">
+            <div class="exp-company">Canadian Cancer Society · Volunteer Part-time</div>
+            <div class="exp-title">Marketing Coordinator and Social Media Lead</div>
+            <div class="exp-meta">
+              <span>📍 Grande Prairie, Alberta</span>
+              <span>⏱ Mar 2022 – Jan 2023 · 11 mos</span>
+            </div>
+            <div class="exp-results">
+              <span class="result-tag">💰 $50K+ fundraised</span>
+              <span class="result-tag">📈 70% digital interaction boost</span>
+              <span class="result-tag">🌍 Bilingual campaigns</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div style="display:flex;flex-direction:column;align-items:center;padding-top:5px;">
+            <div class="exp-dot"></div>
+            <div style="width:2px;flex:1;background:rgba(245,196,0,0.15);margin-top:6px;"></div>
+          </div>
+          <div class="exp-body">
+            <div class="exp-company">Coin Mata Cryptocurrency Community · Full-time (Remote)</div>
+            <div class="exp-title">Head of Product</div>
+            <div class="exp-meta">
+              <span>📍 Remote</span>
+              <span>⏱ Jun 2021 – Aug 2022 · 1 yr 3 mos</span>
+            </div>
+            <div class="exp-results">
+              <span class="result-tag">📈 40% user engagement increase</span>
+              <span class="result-tag">👥 15K+ community growth</span>
+              <span class="result-tag">🚀 3 key platform features launched</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div style="display:flex;flex-direction:column;align-items:center;padding-top:5px;">
+            <div class="exp-dot"></div>
+            <div style="width:2px;flex:1;background:rgba(245,196,0,0.15);margin-top:6px;"></div>
+          </div>
+          <div class="exp-body">
+            <div class="exp-company">First City Monument Bank · Full-time</div>
+            <div class="exp-title">Social Media Lead</div>
+            <div class="exp-meta">
+              <span>📍 Lagos, Nigeria</span>
+              <span>⏱ Apr 2019 – Feb 2022 · 2 yrs 11 mos</span>
+            </div>
+            <div class="exp-results">
+              <span class="result-tag">📈 250%+ audience growth</span>
+              <span class="result-tag">💰 33% ad spend reduction</span>
+              <span class="result-tag">🛡️ Crisis communications</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div style="display:flex;flex-direction:column;align-items:center;padding-top:5px;">
+            <div class="exp-dot"></div>
+          </div>
+          <div class="exp-body">
+            <div class="exp-company">TISV Digital (Agency) · Full-time (Hybrid)</div>
+            <div class="exp-title">Digital Marketing Manager</div>
+            <div class="exp-meta">
+              <span>📍 Lagos, Nigeria</span>
+              <span>⏱ Dec 2017 – Sep 2018 · 10 mos</span>
+            </div>
+            <div class="exp-results">
+              <span class="result-tag">🤝 Client retention</span>
+              <span class="result-tag">📋 Vendor management</span>
+            </div>
+          </div>
+        </div>
+
+        </div><!-- end exp-hidden -->
+
+        <div style="text-align:center; margin-top:2rem;">
+          <button class="view-all-btn" id="expToggle" onclick="toggleExp()">View All Roles ↓</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials">
+    <div style="max-width:1100px; margin:0 auto;">
+      <div class="section-header">
+        <div class="section-label">Social Proof</div>
+        <h2 class="section-title">Don't Take My Word For It</h2>
+        <p class="section-subtitle">Recommendations from colleagues, managers, and clients, from LinkedIn and beyond.</p>
+      </div>
+      <div class="testimonials-carousel">
+        <button class="t-arrow t-arrow-left" id="tPrev" disabled>&#8249;</button>
+        <div class="testimonials-track-wrapper">
+          <div class="testimonials-grid" id="tTrack">
+
+            <div class="t-card">
+              <div class="t-source">From <span>LinkedIn</span> · Mac Nichol</div>
+              <div class="t-quote-mark">"</div>
+              <p class="t-text">I had the pleasure of working with Abdul, and I was always impressed by his creativity and professionalism. He has a real talent for turning ideas into clear, engaging digital content that connects with people. Any team would be lucky to have his skills and positive energy.</p>
+              <div class="t-author">
+                <div class="t-avatar">MN</div>
+                <div>
+                  <div class="t-name">Mac Nichol</div>
+                  <div class="t-role">Property Manager · Rotary Community Service Director</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="t-card">
+              <div class="t-source">From <span>LinkedIn</span> · Martha Mathurin-Moe</div>
+              <div class="t-quote-mark">"</div>
+              <p class="t-text">Abdul is a thoughtful and authentic writer and communicator. His ability to leverage social media platforms to tell compelling stories is exceptional. His enthusiasm and commitment to innovative digital strategy are so refreshing. He will bring fresh and diverse perspectives to any project he gets to work on.</p>
+              <div class="t-author">
+                <div class="t-avatar">MM</div>
+                <div>
+                  <div class="t-name">Martha Mathurin-Moe</div>
+                  <div class="t-role">Vice Provost, Accessibility, Belonging & Community</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="t-card">
+              <div class="t-source">From <span>Portfolio</span> · Keni Akintoye</div>
+              <div class="t-quote-mark">"</div>
+              <p class="t-text">One of Abdul's strengths, which I find quite reassuring in our digital space, is his ability to clearly and quickly understand your ideas and the brief. This is why I have worked with him on a good number of digital marketing campaigns. No issues, no errors, he gets the point, he knows what to do.</p>
+              <div class="t-author">
+                <div class="t-avatar">KA</div>
+                <div>
+                  <div class="t-name">Keni Akintoye</div>
+                  <div class="t-role">Client</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="t-card">
+              <div class="t-source">From <span>Portfolio</span> · Lola Egboh</div>
+              <div class="t-quote-mark">"</div>
+              <p class="t-text">Abdul is one of the most passionate, creative and hardworking people I have worked with. Extremely curious, he's always exploring how to make things better and ever willing to support where needed.</p>
+              <div class="t-author">
+                <div class="t-avatar">LE</div>
+                <div>
+                  <div class="t-name">Lola Egboh</div>
+                  <div class="t-role">Former Comms & Digital Marketing Manager · FCMB</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="t-card">
+              <div class="t-source">From <span>LinkedIn</span> · Chelsea Tolton Bulnes</div>
+              <div class="t-quote-mark">"</div>
+              <p class="t-text">I had the pleasure of working alongside Abdul Omope, and I can confidently say he is a standout Digital Marketing Specialist and strategic partner. Abdul is incredibly insightful and brings a big-picture mindset to every project. He's a true go-getter who consistently develops innovative social strategies that drive meaningful engagement. His ability to generate fresh ideas and translate them into effective campaigns makes him an invaluable asset to any team. Working with Abdul was both inspiring and rewarding — I highly recommend him for any role that values strategic thinking and creative execution.</p>
+              <div class="t-author">
+                <div class="t-avatar">CB</div>
+                <div>
+                  <div class="t-name">Chelsea Tolton Bulnes</div>
+                  <div class="t-role">Lead Marketing Analyst</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="t-card">
+              <div class="t-source">From <span>LinkedIn</span> · Anu Akinyemi MCIPR</div>
+              <div class="t-quote-mark">"</div>
+              <p class="t-text">Abdul is a great team player and works well with his colleagues to achieve the desired goal. He is quick to think and in turn, creates the right engagement for the brand. His reporting skills are also top-notch.</p>
+              <div class="t-author">
+                <div class="t-avatar">AA</div>
+                <div>
+                  <div class="t-name">Anu Akinyemi MCIPR</div>
+                  <div class="t-role">Marketing Communications · IoIC Member</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="t-card">
+              <div class="t-source">From <span>LinkedIn</span> · Adewale Adetona, ACIM</div>
+              <div class="t-quote-mark">"</div>
+              <p class="t-text">Abdul is a smart intelligent Marketing professional who has an eye for detail. He can be trusted to handle end-to-end marketing campaign projects and provide relevant reporting to aid the business decision-making process.</p>
+              <div class="t-author">
+                <div class="t-avatar">AA</div>
+                <div>
+                  <div class="t-name">Adewale Adetona, ACIM</div>
+                  <div class="t-role">Senior Product Marketing Manager · Arqiva</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="t-card">
+              <div class="t-source">From <span>LinkedIn</span> · Kennedy Adetayo</div>
+              <div class="t-quote-mark">"</div>
+              <p class="t-text">Assertive is the phrase that comes to mind when I think about Abdul. I've had the pleasure of knowing Abdul for 5+ years, during which we have worked on multiple digital products, social media marketing campaigns and strategy sessions. Above all, I was impressed with Abdul's ability to be confident and take charge when it is utterly needed. And, of course, his confidence radiates across the team in an infectious manner. Abdul would be a true asset for any positions requiring strategy, digital marketing, influencer marketing and management and comes with my heartfelt recommendation.</p>
+              <div class="t-author">
+                <div class="t-avatar">KA</div>
+                <div>
+                  <div class="t-name">Kennedy Adetayo</div>
+                  <div class="t-role">Full Stack Marketer · Product/Growth/B2B</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <button class="t-arrow t-arrow-right" id="tNext">&#8250;</button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FAQ -->
+  <section id="faq" style="background:var(--darker);">
+    <div style="max-width:1100px; margin:0 auto;">
+      <div class="section-header">
+        <div class="section-label">Common Questions</div>
+        <h2 class="section-title">Before You Ask...</h2>
+      </div>
+      <div class="faq-grid">
+        <div class="faq-card">
+          <div class="faq-q">Will you need sponsorship to work in Canada?</div>
+          <div class="faq-a">No. I am legally authorized to work in Canada without sponsorship.</div>
+        </div>
+        <div class="faq-card">
+          <div class="faq-q">What's your status in Canada?</div>
+          <div class="faq-a">I am a Canadian Permanent Residence.</div>
+        </div>
+        <div class="faq-card">
+          <div class="faq-q">Your last few roles have been short. What happened?</div>
+          <div class="faq-a">A few of my recent roles coincided with my time as an international student, during which I was limited to 20 hours of work per week. My departure from the University of Lethbridge was a personal decision—I left on strong terms with positive relationships intact.</div>
+        </div>
+        <div class="faq-card">
+          <div class="faq-q">You've worked across multiple industries and countries. How does that apply to this role?</div>
+          <div class="faq-a">My experience across finance, non-profit, entertainment, and post-secondary education in both Canada and Nigeria has given me a rare ability to adapt quickly, understand diverse audiences, and apply best practices across sectors. I don't just bring what worked in one industry—I bring a framework for identifying what will work anywhere.</div>
+        </div>
+        <div class="faq-card">
+          <div class="faq-q">Are you open to hybrid or remote work?</div>
+          <div class="faq-a">Yes. I'm comfortable with remote, hybrid, or in-person environments. I've successfully led remote teams across time zones and am equipped to collaborate effectively regardless of setup.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact-inner">
+      <div class="section-label" style="text-align:center;">Get In Touch</div>
+      <h2 class="section-title" style="text-align:center;">Let's Connect.</h2>
+
+
+      <a href="mailto:Omopem@gmail.com" class="contact-email-btn" onclick="event.preventDefault(); navigator.clipboard.writeText('Omopem@gmail.com').then(()=>{this.textContent='Email Copied!'; setTimeout(()=>{this.textContent='Email Me'; window.location.href='mailto:Omopem@gmail.com';},1200);});">Email Me</a>
+
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/abdulomope/" target="_blank" class="social-icon-link" title="LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://x.com/big_abdvl" target="_blank" class="social-icon-link" title="X / Twitter">
+          <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="http://instagram.com/bigabdvl" target="_blank" class="social-icon-link" title="Instagram">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/omope.azeez/" target="_blank" class="social-icon-link" title="Facebook">
+          <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Abdul Omope · Built by the same guy who built his first website at 15. It looks better now.</p>
+  </footer>
+
+<script>
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(function(q) {
+    q.addEventListener('click', function() {
+      var card = this.parentElement;
+      var isActive = card.classList.contains('active');
+      document.querySelectorAll('.faq-card').forEach(function(c) { c.classList.remove('active'); });
+      if (!isActive) card.classList.add('active');
+    });
+  });
+
+  // Experience toggle
+  function toggleExp() {
+    var hidden = document.querySelector('.exp-hidden');
+    var btn = document.getElementById('expToggle');
+    if (hidden.style.display === 'none') {
+      hidden.style.display = 'block';
+      btn.textContent = 'Show Less ↑';
+    } else {
+      hidden.style.display = 'none';
+      btn.textContent = 'View All Roles ↓';
+    }
+  }
+
+  // Metrics toggle
+  function toggleMetrics() {
+    var hidden = document.querySelector('.metrics-hidden');
+    var btn = document.getElementById('metricsToggle');
+    if (hidden.style.display === 'none') {
+      hidden.style.display = 'contents';
+      btn.textContent = 'Show Less ↑';
+    } else {
+      hidden.style.display = 'none';
+      btn.textContent = 'View All Numbers ↓';
+    }
+  }
+
+  // About toggle (mobile only)
+  function toggleAbout() {
+    var aboutText = document.querySelector('.about-text');
+    var btn = document.getElementById('aboutToggle');
+    if (aboutText.classList.contains('expanded')) {
+      aboutText.classList.remove('expanded');
+      btn.textContent = 'Read More ↓';
+    } else {
+      aboutText.classList.add('expanded');
+      btn.textContent = 'Show Less ↑';
+    }
+  }
+
+  // Show/hide about button based on screen size
+  function checkAboutBtn() {
+    var btn = document.querySelector('.about-read-more');
+    if (window.innerWidth <= 860) {
+      btn.style.display = 'inline-block';
+    } else {
+      btn.style.display = 'none';
+      document.querySelector('.about-text').classList.remove('expanded');
+    }
+  }
+  checkAboutBtn();
+  window.addEventListener('resize', checkAboutBtn);
+
+  // Testimonials carousel with arrows
+  (function() {
+    var track = document.getElementById('tTrack');
+    var prevBtn = document.getElementById('tPrev');
+    var nextBtn = document.getElementById('tNext');
+    var page = 0;
+
+    function getPerPage() {
+      return window.innerWidth <= 860 ? 1 : 3;
+    }
+
+    function getTotalPages() {
+      var cards = track.querySelectorAll('.t-card').length;
+      return Math.ceil(cards / getPerPage());
+    }
+
+    function updateCarousel() {
+      var perPage = getPerPage();
+      var gap = 24; // 1.5rem
+      var card = track.querySelector('.t-card');
+      var cardWidth = card.offsetWidth + gap;
+      var offset = page * perPage * cardWidth;
+      track.style.transform = 'translateX(-' + offset + 'px)';
+      prevBtn.disabled = page === 0;
+      nextBtn.disabled = page >= getTotalPages() - 1;
+
+      // Set wrapper height to match tallest visible card
+      var cards = track.querySelectorAll('.t-card');
+      var start = page * perPage;
+      var maxH = 0;
+      for (var i = start; i < start + perPage && i < cards.length; i++) {
+        var h = cards[i].offsetHeight;
+        if (h > maxH) maxH = h;
+      }
+      track.parentElement.style.height = maxH + 'px';
+    }
+
+    nextBtn.addEventListener('click', function() {
+      if (page < getTotalPages() - 1) { page++; updateCarousel(); }
+    });
+
+    prevBtn.addEventListener('click', function() {
+      if (page > 0) { page--; updateCarousel(); }
+    });
+
+    window.addEventListener('resize', function() { page = 0; updateCarousel(); });
+    updateCarousel();
+  })();
+
+</script>
+
+<script>(function(){var n=document.querySelector("nav");if(!n)return;function f(){n.classList.toggle("scrolled",window.scrollY>10)}window.addEventListener("scroll",f,{passive:true});f();})();</script>
+</body>
+</html>
+<script async src="/.netlify/scripts/hud?variant=public" data-nf-variant="public" data-netlify-site-id="c9396593-5e66-4ba7-b854-bc60625c822d" data-app-host="app.netlify.com" data-account-tier="free"></script>
