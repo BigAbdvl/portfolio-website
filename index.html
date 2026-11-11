@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
+<!-- This site is hosted on Netlify. Anyone can build and deploy a site
+     like this one for free: https://netlify.new/?utm_campaign=loops&utm_source=ai-legible&utm_medium=owned&utm_content=comment&utm_id=c9396593-5e66-4ba7-b854-bc60625c822d
+     Netlify hosting facts for this site: static/SSR served via Netlify Edge. -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Abdul Omope | Marketing & Communications | Digital Strategy | Edmonton, AB</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Barlow+Condensed:wght@700;800;900&display=swap" rel="stylesheet"/>
@@ -1160,13 +1163,55 @@
       /* Section titles smaller on mobile */
       .section-title { font-size: 2rem; }
     }
-  </style>
+  
+    /* ===================== Layout matched to the Product & Design portfolio ===================== */
+    :root{--black:#0A0A0B;--darker:#111113;--dark:#141416;--yellow:#F7C31F;--pad:clamp(20px,4.5vw,64px);--mute:#A3A09A}
+    body{font-size:17.5px;line-height:1.62;background:#0A0A0B}
+    /* nav */
+    nav{padding:14px var(--pad)!important;background:transparent!important;border-bottom:1px solid transparent!important;backdrop-filter:none!important;transition:background .4s,border-color .4s}
+    nav.scrolled{background:rgba(10,10,11,.72)!important;backdrop-filter:blur(14px)!important;-webkit-backdrop-filter:blur(14px)!important;border-color:rgba(245,242,234,.10)!important}
+    .nav-logo{display:flex;align-items:center;line-height:0}
+    .nav-logo img{height:34px;width:auto}
+    .nav-links{flex:1;justify-content:center;gap:6px!important;position:relative}
+    .nav-links li:last-child{position:absolute;right:0}
+    .nav-links a{font-size:15px!important;padding:9px 14px;border-radius:99px;color:var(--mute)!important;transition:color .25s,background .25s}
+    .nav-links a:hover{color:#F5F2EA!important;background:rgba(245,242,234,.06)}
+    .nav-cta{background:#F5F2EA!important;color:#0A0A0B!important;border-radius:99px!important;padding:10px 16px!important;font-size:14px!important;font-weight:500!important}
+    /* page columns: full width with the same side padding as the product site */
+    #hero{padding:96px var(--pad) clamp(56px,8vh,96px)!important}
+    section{padding:clamp(56px,8vw,112px) var(--pad)!important}
+    .hero-inner,.about-grid,.writing-grid,.metrics-grid,.services-grid,.brands-grid,.testimonials-carousel,.tools-grid{max-width:1600px!important;margin-left:0!important;margin-right:auto!important}
+    .exp-timeline,.faq-grid,.contact-inner{margin-left:0!important;margin-right:auto!important}
+    #selected-work > div,#writing > div,#about > div,#experience > div,#testimonials > div,#faq > div{max-width:1600px!important;margin-left:0!important;margin-right:auto!important}
+    .hero-photo-col{margin-right:clamp(0px,3vw,48px)}
+    .nav-links a.nav-cta{background:#F5F2EA!important;color:#0A0A0B!important}
+    .nav-links a.nav-cta:hover{background:#fff!important}
+    /* type scale */
+    .hero-text{max-width:none!important;flex:1}
+    .hero-name{font-size:clamp(64px,10vw,168px)!important;line-height:.92!important;letter-spacing:.01em!important}
+    .hero-name span{color:var(--yellow)}
+    .hero-greeting{font-size:clamp(22px,2.4vw,36px)!important}
+    .section-title{font-size:clamp(44px,6.6vw,104px)!important;line-height:.95!important}
+    .section-label{display:inline-flex;align-items:center;gap:10px;font-family:'Barlow Condensed',sans-serif!important;font-weight:700!important;font-size:11px!important;letter-spacing:.1em!important;color:var(--mute)!important;margin-bottom:18px!important}
+    .section-label::before{content:"";width:22px;height:1px;background:var(--yellow)}
+    .section-subtitle,.hero-desc{color:var(--mute)!important;font-size:17.5px!important}
+    /* buttons + cards: same rounded shapes as the product site */
+    .btn-yellow,.btn-ghost,.view-all-btn,.contact-email-btn{border-radius:99px!important}
+    .hero-photo-frame,.creative-thumb{border-radius:20px!important;overflow:hidden}
+    .hero-photo-frame img{border-radius:20px!important}
+    .writing-card,.sw-card,.faq-card,.t-card{border-radius:20px!important}
+    .hero-stat{border-radius:14px!important}
+    @media (max-width:860px){
+      .nav-links{display:none!important}
+      .hero-name{font-size:20vw!important}
+    }
+</style>
 </head>
 <body>
 
   <!-- NAV -->
   <nav>
-    <a href="#hero" class="nav-logo">Abdul<span>.</span></a>
+    <a href="#hero" class="nav-logo" aria-label="Abdul Omope, home"><img src="logo.webp" alt="Abdul Omope" width="480" height="116"></a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#experience">Experience</a></li>
@@ -1942,5 +1987,7 @@
 
 </script>
 
+<script>(function(){var n=document.querySelector("nav");if(!n)return;function f(){n.classList.toggle("scrolled",window.scrollY>10)}window.addEventListener("scroll",f,{passive:true});f();})();</script>
 </body>
 </html>
+<script async src="/.netlify/scripts/hud?variant=public" data-nf-variant="public" data-netlify-site-id="c9396593-5e66-4ba7-b854-bc60625c822d" data-app-host="app.netlify.com" data-account-tier="free"></script>
